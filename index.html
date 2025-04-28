@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Bestie!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fde4e4; /* Light pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .birthday-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* For confetti animation */
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: confettiFall 2s linear infinite,
+                       confettiRotate 1s linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% { top: -20px; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        @keyframes confettiRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h1 {
+            color: #e91e63; /* Pink heading */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .message {
+            color: #333;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .heart {
+            color: #ff69b4; /* Hot pink heart */
+            font-size: 2em;
+            animation: beat 1s infinite alternate;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .wishes {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            color: #777;
+            font-weight: bold;
+        }
+        .link-button:hover {
+            background-color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <div class="birthday-card">
+        <h1>Happy Birthday, My Constant one❤️</h1>
+        <div class="message">
+            Wishing you the happiest of birthdays! May your day be filled with joy, laughter, and everything that makes you smile. You're not just a friend; you're family. <span class="heart">💖</span>
+        </div>
+        <div class="wishes">
+            May all your dreams come true this year!
+        </div>
+        <div class="signature">
+            With lots of love,<br>
+            Your Supporter.....sravani🫶
+        </div>
+        <div class="link-container">
+            <a href="C:\Users\Somay\OneDrive\her\message .html" class="link-button">Click for a Special Message</a>
+        </div>
+    </div>
+    
+
+    <script>
+        const card = document.querySelector('.birthday-card');
+        const confettiCount = 100;
+
+        for (let i = 0; i < confettiCount; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.backgroundColor = getRandomColor();
+            confetti.style.left = `${Math.random() * 100}%`;
+            confetti.style.animationDelay = `${Math.random() * 2}s`;
+            confetti.style.animationDuration = `${1 + Math.random() * 2}s`;
+            card.appendChild(confetti);
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
